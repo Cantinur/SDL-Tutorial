@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF4580A4221B09870002295B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF458016221B077D0002295B /* main.cpp */; };
 		AF4580A5221B0A320002295B /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF45809A221B081B0002295B /* libSDL2-2.0.0.dylib */; };
+		AF4580A7221C57F20002295B /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4580A6221C57F20002295B /* libSDL2_image-2.0.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +134,7 @@
 		AF45809E221B081B0002295B /* libSDL2_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSDL2_test.a; sourceTree = "<group>"; };
 		AF45809F221B081B0002295B /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		AF4580A2221B081B0002295B /* sdl2.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdl2.m4; sourceTree = "<group>"; };
+		AF4580A6221C57F20002295B /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2_image/2.0.4/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4580A7221C57F20002295B /* libSDL2_image-2.0.0.dylib in Frameworks */,
 				AF4580A5221B0A320002295B /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +178,7 @@
 		AF45801D221B081A0002295B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF4580A6221C57F20002295B /* libSDL2_image-2.0.0.dylib */,
 				AF458040221B081B0002295B /* sdl2 */,
 				AF45801E221B081B0002295B /* sdl2_image */,
 				AF45802F221B081B0002295B /* sdl2_ttf */,

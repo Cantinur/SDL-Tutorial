@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 const int WIDTH = 800, HEIGHT = 600;
 
@@ -7,11 +8,7 @@ int main(int argc, char *argv[]){
 	SDL_Surface *imageSurface = NULL;
 	SDL_Surface *windowSurface = NULL;
 	
-	
-	if(SDL_Init(SDL_INIT_EVERYTHING)<0)
-	{
-		std::cout << "SDL could not init" << std::endl;
-	}
+	SDL_Init(SDL_INIT_EVERYTHING);
 	
 	SDL_Window *window = SDL_CreateWindow("Hello SDL World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_ALLOW_HIGHDPI);
 	windowSurface = SDL_GetWindowSurface(window);
@@ -22,13 +19,16 @@ int main(int argc, char *argv[]){
 		return EXIT_FAILURE;
 	}
 	
-	SDL_Event windowEvent;
-	imageSurface = SDL_LoadBMP("man.bmp");
-	
-	if (imageSurface == NULL )
+	if (!(IMG_Init(IMG_INIT_PNG)))
 	{
-		std::cout<< "Could not load the image. SDL Error: " << SDL_GetError() << std::endl;
+		std::cout << "Could not initialize SDL_image :" << IMG_GetError() << std::endl;
+		return EXIT_FAILURE;
 	}
+	
+	SDL_Event windowEvent;
+	imageSurface = IMG_Load( "logo.png" ); //SDL_LoadBMP("man.bmp");
+	
+	if (imageSurface == NULL ) std::cout<< "Could not load the image. SDL Error: " << SDL_GetError() << std::endl;
 	
 	while (true){
 		if (SDL_PollEvent(&windowEvent))
